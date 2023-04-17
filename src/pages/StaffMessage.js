@@ -101,6 +101,13 @@ const UserHome = props => {
 
             <div style={{ backgroundColor: '#f2f2f2', padding: '20px' }}>
                 <h3 style={{ textAlign: 'center' }}>Messages</h3>
+                <table style={{ borderCollapse: 'collapse' }}>
+                    <tr>
+                        <td style={{ border: '1px solid black', padding: '5px' }}>User Query</td>
+                        <td style={{ border: '1px solid black', padding: '5px' }}><a href="#">U01</a></td>
+                        <td style={{ border: '1px solid black', padding: '5px' }}><a href="#">U02</a></td>
+                    </tr>
+                </table>
                 {loading && <p>Loading messages...</p>}
                 {error && <p>An error occurred: {error}</p>}
                 <ul style={{ listStyle: 'none', margin: 0, padding: 0, backgroundColor: '#f2f2f2', padding: '20px', height: '500px', overflowY: 'scroll' }}>
@@ -112,7 +119,7 @@ const UserHome = props => {
                             }}
                         >
                             <div>
-                                {message.sender_id == '0' ? '(You)' : '(User id: 1)' }
+                                {message.sender_id == '0' ? '(You)' : '(Username: U01)' }
                                 {'-'}
                                 {new Date(message.created_at).toLocaleString()}
                             </div>
@@ -129,11 +136,11 @@ const UserHome = props => {
                             >
                                 {message.message}&nbsp;&nbsp;
 
-                                {message.sender_id == '0' && (
+                              
                                     <button onClick={() => DeleteMessage(message.id)}>
                                         <FontAwesomeIcon icon={faTrash} />
                                     </button>
-                                )}
+                                
                             </li>
 
                         </li>
