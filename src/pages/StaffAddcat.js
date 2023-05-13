@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const UserHome = props => {
+const StaffAddcat = props => {
 
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -199,4 +199,4 @@ const UserHome = props => {
 }
 
 
-export default UserHome;
+export default StaffAddcat;

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const UserHome = props => {
+const UserMessage = props => {
 
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -162,4 +162,4 @@ const UserHome = props => {
     );
 };
 
-export default UserHome;
+export default UserMessage;

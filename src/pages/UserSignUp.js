@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const SignUp = () => {
+const UserSignUp = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [cpassword, setcPassword] = useState('');
     const [result, setResult] = useState('');
 
     const handleSubmit = async (e) => {
@@ -13,8 +14,10 @@ const SignUp = () => {
             const response = await axios.post('http://192.168.1.251:3001/api/account/user/add', data, {
                 headers: {
                     'Content-Type': 'application/json',
+                    'api-key': 'api', 
                 },
             });
+
             setResult(`Status Codes ${response.status} : ${response.data}`);
         } catch (error) {
             console.error(error);
@@ -50,11 +53,19 @@ const SignUp = () => {
                     <br />
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
+
                 <div style={{ marginTop: 10 }}>
                     <label>Password</label>
                     <br />
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
+
+                <div style={{ marginTop: 10 }}>
+                    <label>Confirme Password</label>
+                    <br />
+                    <input type="password" onChange={(e) => setcPassword(e.target.value)} />
+                </div>
+
                 <br />
                 <button type="submit">SignUp</button>
                 <br />
@@ -67,4 +78,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default UserSignUp;

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const UserHome = props => {
+const StaffMessage = props => {
 
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -105,7 +105,7 @@ const UserHome = props => {
                     <tr>
                         <td style={{ border: '1px solid black', padding: '5px' }}>User Query</td>
                         <td style={{ border: '1px solid black', padding: '5px' }}><a href="#">U01</a></td>
-                        <td style={{ border: '1px solid black', padding: '5px' }}><a href="#">U02</a></td>
+                        <td style={{ border: '1px solid black', padding: '5px' }}><a href="#">U05</a></td>
                     </tr>
                 </table>
                 {loading && <p>Loading messages...</p>}
@@ -169,4 +169,4 @@ const UserHome = props => {
     );
 };
 
-export default UserHome;
+export default StaffMessage;

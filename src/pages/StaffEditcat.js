@@ -2,7 +2,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const Edit = () => {
+const StaffEditcat = () => {
     const { catid } = useParams();
     const navigate = useNavigate();
 
@@ -116,4 +116,4 @@ const Edit = () => {
 
 }
 
-export default Edit;
+export default StaffEditcat;

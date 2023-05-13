@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
-const UserHome = props => {
+const StaffHome = props => {
 
     const [cats, setCats] = useState([]);
     const [error, setError] = useState(null);
@@ -235,4 +235,4 @@ const UserHome = props => {
     );
 }
 
-export default UserHome;
+export default StaffHome;

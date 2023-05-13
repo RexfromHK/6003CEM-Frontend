@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const SignUp = () => {
+const StaffSignUp = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [cpassword, setcPassword] = useState('');
     const [signupCode, setSignupCode] = useState('');
     const [result, setResult] = useState('');
 
@@ -51,11 +52,19 @@ const SignUp = () => {
                     <br />
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
+
                 <div style={{ marginTop: 10 }}>
                     <label>Password</label>
                     <br />
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
+
+                <div style={{ marginTop: 10 }}>
+                    <label>Confirme Password</label>
+                    <br />
+                    <input type="password" onChange={(e) => setcPassword(e.target.value)} />
+                </div>
+
                 <div style={{ marginTop: 10 }}>
                     <label>SignUp Code</label>
                     <br />
@@ -73,4 +82,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default StaffSignUp;

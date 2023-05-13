@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 
-const Login = () => {
+const StaffLogin = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [result, setResult] = useState('');
@@ -49,6 +50,7 @@ const Login = () => {
                 </div>
             </nav>
             <br />
+
             <h3>Login</h3>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -62,6 +64,12 @@ const Login = () => {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <br />
+                <GoogleLogin
+                    clientId="<'685081965739-olqtda9u85dhvnk37gn8v5ia2i8ma7g1.apps.googleusercontent.com'>"
+                    buttonText="Login with Google"
+
+                />
+                <br /> <br />
                 <button type="submit">Login</button>
                 <br />
                 <br />
@@ -73,4 +81,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default StaffLogin;

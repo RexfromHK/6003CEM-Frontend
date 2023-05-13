@@ -2,7 +2,7 @@
 import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 
-const Login = () => {
+const UserLogin = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [result, setResult] = useState('');
@@ -90,4 +90,4 @@ const Login = () => {
 };
 
 
-export default Login;
+export default UserLogin;
