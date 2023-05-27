@@ -31,6 +31,7 @@ const UserHome = props => {
     const [breed, setBreed] = useState("");
     const [status, setStatus] = useState("");
 
+    // search cat via api
     const handleSearch = (e) => {
         e.preventDefault();
         setLoading(true);
@@ -54,6 +55,7 @@ const UserHome = props => {
             });
     };
 
+    // get all cat via api
     useEffect(() => {
         setLoading(true);
         axios.get(`http://192.168.1.251:3001/api/cat/getallcat/${userId}`)
@@ -68,7 +70,7 @@ const UserHome = props => {
             });
     }, [userId]); // add location to the dependency array
 
-
+    // add cat to favorite via api
     async function addfavorite(catid) {
                 const data = { catid, userId };
                 console.log(data);

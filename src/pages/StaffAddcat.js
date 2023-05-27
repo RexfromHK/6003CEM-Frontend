@@ -17,6 +17,8 @@ const StaffAddcat = props => {
     const [image, setImage] = useState('');
     const [location, setlocation] = useState('Sha Tin');
 
+
+    // add cat via api
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();

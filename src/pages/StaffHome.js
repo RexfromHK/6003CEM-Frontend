@@ -29,6 +29,7 @@ const StaffHome = props => {
     const [breed, setBreed] = useState("");
     const [status, setStatus] = useState("");
 
+    // searching via api
     const handleSearch = (e) => {
         e.preventDefault();
         setLoading(true);
@@ -53,6 +54,7 @@ const StaffHome = props => {
     };
 
 
+    // get all cat via api
     useEffect(() => {
         setLoading(true);
         axios.get(`http://192.168.1.251:3001/api/cat/getallcat/${userId}`)
@@ -67,7 +69,7 @@ const StaffHome = props => {
             });
     }, [userId]); // add location to the dependency array
 
-
+    // delete cat via api
     async function deleteCat(catid) {
         try {
             const response = await fetch(`http://192.168.1.251:3001/api/cat/delete/${catid}`, {
@@ -80,7 +82,7 @@ const StaffHome = props => {
 
             const data = await response.json();
             console.log(`Deleted cat with id ${catid}`);
-            deletelocation.reload(); // 在這裡重新加載頁面
+            deletelocation.reload(); // reload the page
             return data;
         } catch (error) {
             console.error(error);

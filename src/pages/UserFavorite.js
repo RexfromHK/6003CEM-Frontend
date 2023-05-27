@@ -20,7 +20,7 @@ const UserFavorite = props => {
 
     console.log(userId);
 
-
+    // get all favorite list via api
     useEffect(() => {
         setLoading(true);
         axios.get(`http://192.168.1.251:3001/api/favorite/getallcat/${userId}`)
@@ -50,7 +50,7 @@ const UserFavorite = props => {
 
             const data = await response.json();
             console.log(`Deleted cat with id ${favoriteid}`);
-            location.reload(); // 在這裡重新加載頁面
+            location.reload(); // reload the page
             return data;
         } catch (error) {
             console.error(error);

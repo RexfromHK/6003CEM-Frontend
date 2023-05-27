@@ -14,6 +14,7 @@ const StaffEditcat = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    // get cat detail from api
     useEffect(() => {
         setLoading(true);
         axios.get(`http://192.168.1.251:3001/api/cat/getcat/${catid}`)
@@ -36,7 +37,7 @@ const StaffEditcat = () => {
         }));
     };
 
-
+    // update cat via api
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(cat);

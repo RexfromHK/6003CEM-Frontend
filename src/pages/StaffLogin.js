@@ -8,6 +8,7 @@ const StaffLogin = () => {
     const [result, setResult] = useState('');
     const userid = '';
 
+    // check user via api
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = { username, password };
@@ -19,7 +20,7 @@ const StaffLogin = () => {
 
             });
             setResult(`Status Codes ${response.status} : ${response.data}`);
-            sessionStorage.setItem('userId', response.data.toString());
+            sessionStorage.setItem('userId', response.data.toString()); // save userid into session and pass to next page
             window.location.href = 'http://192.168.1.250:3001/staff/home';
 
 

@@ -8,6 +8,7 @@ const StaffSignUp = () => {
     const [signupCode, setSignupCode] = useState('');
     const [result, setResult] = useState('');
 
+    // register account via api
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = { username, password, signupCode };

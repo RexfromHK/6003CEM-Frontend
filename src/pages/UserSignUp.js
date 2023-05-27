@@ -7,6 +7,7 @@ const UserSignUp = () => {
     const [cpassword, setcPassword] = useState('');
     const [result, setResult] = useState('');
 
+    // add new account via api
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = { username, password };

@@ -15,6 +15,7 @@ const UserMessage = props => {
     const location = window.location;
     const navigate = useNavigate();
 
+    // delete message via api
     async function DeleteMessage(messageid) {
         try {
             const response = await fetch(`http://192.168.1.251:3001/api/message/delete/${messageid}`, {
@@ -27,7 +28,7 @@ const UserMessage = props => {
 
             const data = await response.json();
             console.log(`Deleted cat with id ${messageid}`);
-            location.reload(); // 在這裡重新加載頁面
+            location.reload(); // reload the page
             return data;
         } catch (error) {
             console.error(error);
@@ -37,6 +38,7 @@ const UserMessage = props => {
 
     console.log(userId);
 
+    // get all message via api
     useEffect(() => {
         setLoading(true);
         axios.get(`http://192.168.1.251:3001/api/message/get/${userId}`)
@@ -52,6 +54,7 @@ const UserMessage = props => {
             });
     }, [userId]);
 
+    // add new message via api
     const handleSubmit = event => {
         event.preventDefault();
         axios.post('http://192.168.1.251:3001/api/message/add', {
@@ -62,7 +65,7 @@ const UserMessage = props => {
             .then(response => {
                 setNewMessage('');
                 setMessages([...messages, response.data]);
-                location.reload(); // 在這裡重新加載頁面
+                location.reload(); // reload the page
             })
 
             .catch(error => {
