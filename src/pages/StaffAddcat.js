@@ -36,6 +36,7 @@ const StaffAddcat = props => {
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data',
+                        'api-key': '6003CEM',
                     },
                 }
             );
