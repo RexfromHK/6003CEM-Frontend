@@ -58,8 +58,8 @@ const UserMessage = props => {
     const handleSubmit = event => {
         event.preventDefault();
         axios.post('http://192.168.1.251:3001/api/message/add', {
-            senderId: '1',
-            receiverId: '0',
+            senderId: userId,
+            receiverId: recipientId,
             message: newMessage
         })
             .then(response => {
